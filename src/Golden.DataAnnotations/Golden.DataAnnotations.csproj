@@ -5,6 +5,15 @@
         <LangVersion>default</LangVersion>
         <Nullable>enable</Nullable>
         <NoWarn>CS8602;CS8603</NoWarn>
+        <Title>Golden Data Annotations</Title>
+        <Authors>Golden</Authors>
+        <Copyright>GoldenPack! 2020</Copyright>
+        <PackageProjectUrl>https://github.com/megolden/goldenframework.core</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageLicense>https://licenses.nuget.org/MIT</PackageLicense>
+        <RepositoryUrl>https://github.com/megolden/goldenframework.core</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Description>https://github.com/megolden/goldenframework.core</Description>
     </PropertyGroup>
 
     <ItemGroup>
