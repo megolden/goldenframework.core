@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>default</LangVersion>
+        <Nullable>enable</Nullable>
+        <NoWarn>CS8602;CS8603</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Golden.Common\Golden.Common.csproj" />
+    </ItemGroup>
+
+</Project>
