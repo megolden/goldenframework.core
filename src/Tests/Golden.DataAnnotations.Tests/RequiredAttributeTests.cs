@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
@@ -17,7 +17,7 @@ namespace Golden.DataAnnotations.Tests
         [Fact]
         void IsValid_returns_false_when_null_value_passed()
         {
-            var result = validator.IsValid(null);
+            var result = validator.IsValid(value: null);
 
             result.Should().BeFalse();
         }

@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.DataAnnotations", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Common.Persian", "Golden.Common.Persian\Golden.Common.Persian.csproj", "{3670972A-A083-4064-B55D-8E057E329EF3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F364C9F0-5F16-4E30-9B81-1041133F0226}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F364C9F0-5F16-4E30-9B81-1041133F0226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Common.Tests", "test\Golden.Common.Tests\Golden.Common.Tests.csproj", "{180A5CC3-A9F7-424F-8D9D-D60BBEE1DCFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Common.Tests", "Tests\Golden.Common.Tests\Golden.Common.Tests.csproj", "{180A5CC3-A9F7-424F-8D9D-D60BBEE1DCFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Common.Persian.Tests", "test\Golden.Common.Persian.Tests\Golden.Common.Persian.Tests.csproj", "{DDCF1376-C947-4E43-9996-6AFE65B16001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Common.Persian.Tests", "Tests\Golden.Common.Persian.Tests\Golden.Common.Persian.Tests.csproj", "{DDCF1376-C947-4E43-9996-6AFE65B16001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.DataAnnotations.Tests", "test\Golden.DataAnnotations.Tests\Golden.DataAnnotations.Tests.csproj", "{AAA1767C-6F17-4A74-A81D-1380C6FC110D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.DataAnnotations.Tests", "Tests\Golden.DataAnnotations.Tests\Golden.DataAnnotations.Tests.csproj", "{AAA1767C-6F17-4A74-A81D-1380C6FC110D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
