@@ -68,7 +68,7 @@ namespace Golden.Common
                 throw new ArgumentException("invalid member lambda expression");
         }
 
-        private static Expression UnwrapQuote(this Expression expression)
+        internal static Expression UnwrapQuote(this Expression expression)
         {
             if (expression == null)
                 throw new ArgumentNullException(nameof(expression));

@@ -19,5 +19,6 @@
 
     <ItemGroup>
         <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+        <PackageReference Include="System.Text.Json" Version="4.7.2" />
     </ItemGroup>
 </Project>
