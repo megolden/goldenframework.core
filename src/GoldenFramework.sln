@@ -21,18 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{99
 	ProjectSection(SolutionItems) = preProject
 		..\.editorconfig = ..\.editorconfig
 		..\.gitignore = ..\.gitignore
-		..\build.packages.ps1 = ..\build.packages.ps1
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{4809247C-3446-4035-B4A9-78803DFC6E0B}"
-	ProjectSection(SolutionItems) = preProject
-		..\packages\.gitignore = ..\packages\.gitignore
-		..\packages\Golden.Common.1.3.0.nupkg = ..\packages\Golden.Common.1.3.0.nupkg
-		..\packages\Golden.Common.1.5.0.nupkg = ..\packages\Golden.Common.1.5.0.nupkg
-		..\packages\Golden.Common.Persian.1.3.0.nupkg = ..\packages\Golden.Common.Persian.1.3.0.nupkg
-		..\packages\Golden.Common.Persian.1.5.0.nupkg = ..\packages\Golden.Common.Persian.1.5.0.nupkg
 	EndProjectSection
 EndProject
 Global
@@ -125,6 +115,5 @@ Global
 		{180A5CC3-A9F7-424F-8D9D-D60BBEE1DCFB} = {F364C9F0-5F16-4E30-9B81-1041133F0226}
 		{DDCF1376-C947-4E43-9996-6AFE65B16001} = {F364C9F0-5F16-4E30-9B81-1041133F0226}
 		{AAA1767C-6F17-4A74-A81D-1380C6FC110D} = {F364C9F0-5F16-4E30-9B81-1041133F0226}
-		{4809247C-3446-4035-B4A9-78803DFC6E0B} = {99368255-C0EA-400B-A19F-382826D5E69D}
 	EndGlobalSection
 EndGlobal

@@ -13,7 +13,7 @@
         <RepositoryUrl>https://github.com/megolden/goldenframework.core</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Description>https://github.com/megolden/goldenframework.core</Description>
-        <Version>2.1.0</Version>
+        <Version>2.0.0</Version>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <FileVersion>$(Version)</FileVersion>
         <PackageVersion>$(Version)</PackageVersion>
