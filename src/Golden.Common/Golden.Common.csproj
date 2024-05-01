@@ -1,25 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <LangVersion>9</LangVersion>
+        <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <NoWarn>CS8602;CS8603</NoWarn>
         <Title>Golden Common</Title>
         <Authors>Golden</Authors>
-        <Copyright>GoldenPack! 2020</Copyright>
+        <Copyright>GoldenPack 2020-2024</Copyright>
         <PackageProjectUrl>https://github.com/megolden/goldenframework.core</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageLicense>https://licenses.nuget.org/MIT</PackageLicense>
         <RepositoryUrl>https://github.com/megolden/goldenframework.core</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Description>https://github.com/megolden/goldenframework.core</Description>
-        <!-- <PackageVersion>1.2.0</PackageVersion>
-        <AssemblyVersion>1.2.0</AssemblyVersion>
-        <FileVersion>1.2.0</FileVersion> -->
+        <Version>2.1.0</Version>
+        <AssemblyVersion>$(Version)</AssemblyVersion>
+        <FileVersion>$(Version)</FileVersion>
+        <PackageVersion>$(Version)</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
-        <PackageReference Include="System.Text.Json" Version="4.7.2" />
+        <PackageReference Include="System.Text.Json" Version="6.0.9" />
     </ItemGroup>
 </Project>
