@@ -50,6 +50,7 @@ namespace Golden.Common
         {
             return value.Concat(values.AsEnumerable());
         }
+
         public static string Concat(this string value, IEnumerable<string> values)
         {
             return String.Concat(values.Prepend(value));
@@ -66,6 +67,7 @@ namespace Golden.Common
         {
             return value.EncodeBase64(Encoding.UTF8);
         }
+
         public static string EncodeBase64(this string value, Encoding encoding)
         {
             return Convert.ToBase64String(encoding.GetBytes(value));
@@ -75,6 +77,7 @@ namespace Golden.Common
         {
             return value.DecodeBase64(Encoding.UTF8);
         }
+
         public static string DecodeBase64(this string value, Encoding encoding)
         {
             var decodedBytes = Convert.FromBase64String(value);
@@ -100,6 +103,7 @@ namespace Golden.Common
         {
             return value.GetBytes(Encoding.UTF8);
         }
+
         public static byte[] GetBytes(this string value, Encoding encoding)
         {
             return encoding.GetBytes(value);

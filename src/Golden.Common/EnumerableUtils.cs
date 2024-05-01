@@ -1,10 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Golden.Common
 {
@@ -129,6 +126,11 @@ namespace Golden.Common
         public static string Join<T>(this IEnumerable<T> collection, string separator)
         {
             return String.Join(separator, collection);
+        }
+
+        public static IEnumerable<T> Of<T>(params T[] items)
+        {
+            return items;
         }
     }
 }

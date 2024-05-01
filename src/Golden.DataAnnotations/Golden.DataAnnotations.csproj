@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>default</LangVersion>
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>9</LangVersion>
         <Nullable>enable</Nullable>
         <NoWarn>CS8602;CS8603</NoWarn>
         <Title>Golden Data Annotations</Title>

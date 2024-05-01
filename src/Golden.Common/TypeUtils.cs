@@ -118,6 +118,41 @@ namespace Golden.Common
                 throw new InvalidOperationException();
         }
 
+        public static T GetStaticValue<T>(this Type type, string name)
+        {
+            return (T)type.GetStaticValue(name);
+        }
+
+        public static object GetStaticValue(this Type type, string name)
+        {
+            var searchOptions = BindingFlags.Public |
+                                BindingFlags.NonPublic |
+                                BindingFlags.Instance |
+                                BindingFlags.Static |
+                                BindingFlags.IgnoreCase;
+
+            var member = type.GetMember(name, searchOptions)[0];
+            return member.GetMemberValue();
+        }
+
+        public static void SetStaticValue(this Type type, string name, object value)
+        {
+            var searchOptions = BindingFlags.Public |
+                                BindingFlags.NonPublic |
+                                BindingFlags.Instance |
+                                BindingFlags.Static |
+                                BindingFlags.IgnoreCase;
+
+            var member = type.GetMember(name, searchOptions)[0];
+            member.SetMemberValue(value);
+        }
+
+        public static void SetStaticValue(this Type type, object memberValues)
+        {
+            var properties = memberValues.GetType().GetProperties();
+            properties.ForEach(property => type.SetStaticValue(property.Name, property.GetValue(memberValues)));
+        }
+
         public static T CreateInstance<T>(this Type type, params object[] arguments)
         {
             return (T)type.CreateInstance(arguments);

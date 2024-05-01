@@ -137,6 +137,44 @@ namespace Golden.Common.Tests
             value.Should().Be(10);
         }
 
+        [Fact]
+        void SetStaticValue_sets_multiple_static_member_values()
+        {
+            var type = typeof(TypeMember);
+
+            type.SetStaticValue(new
+            {
+                PublicStaticField = 10,
+                PublicStaticProperty = 5,
+                StaticPrivateField = 11
+            });
+
+            TypeMember.PublicStaticField.Should().Be(10);
+            TypeMember.PublicStaticProperty.Should().Be(5);
+            TypeMember.GetStaticPrivateField().Should().Be(11);
+        }
+
+        [Fact]
+        void SetStaticValue_sets_static_member_value_when_object_type_passed()
+        {
+            var type = typeof(TypeMember);
+
+            type.SetStaticValue("StaticPrivateField", 10);
+
+            TypeMember.GetStaticPrivateField().Should().Be(10);
+        }
+
+        [Fact]
+        void GetStaticValue_gets_static_member_value_when_object_type_passed()
+        {
+            TypeMember.PublicStaticField = 100;
+            var type = typeof(TypeMember);
+
+            var value = type.GetStaticValue("PublicStaticField");
+
+            value.Should().Be(100);
+        }
+
         [Theory]
         [InlineData(typeof(string), null)]
         [InlineData(typeof(int), 0)]

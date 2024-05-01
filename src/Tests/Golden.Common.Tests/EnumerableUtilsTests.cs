@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
@@ -270,6 +270,14 @@ namespace Golden.Common.Tests
             var result = collection.Join(separator);
 
             result.Should().Be(expectedResult);
+        }
+
+        [Fact]
+        void Of_creates_enumerable_of_specified_items()
+        {
+            var enumerable = EnumerableUtils.Of(1, 2, 3);
+
+            enumerable.Should().BeEquivalentTo(new[] { 1, 2, 3 });
         }
     }
 

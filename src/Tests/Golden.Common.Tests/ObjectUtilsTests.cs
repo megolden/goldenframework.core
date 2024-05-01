@@ -259,16 +259,6 @@ namespace Golden.Common.Tests
         }
 
         [Fact]
-        void SetValue_sets_static_member_value_when_object_type_passed()
-        {
-            var type = typeof(TypeMember);
-
-            type.SetValue("StaticPrivateField", 10);
-
-            TypeMember.GetStaticPrivateField().Should().Be(10);
-        }
-
-        [Fact]
         void SetValue_searches_members_with_no_case_sensitive()
         {
             var obj = new TypeMember();
@@ -291,23 +281,6 @@ namespace Golden.Common.Tests
 
             obj.PublicProperty.Should().Be(10);
             obj.GetPrivateProperty().Should().Be(5);
-        }
-
-        [Fact]
-        void SetValue_sets_multiple_static_member_values()
-        {
-            var type = typeof(TypeMember);
-
-            type.SetValue(new
-            {
-                PublicStaticField = 10,
-                PublicStaticProperty = 5,
-                StaticPrivateField = 11
-            });
-
-            TypeMember.PublicStaticField.Should().Be(10);
-            TypeMember.PublicStaticProperty.Should().Be(5);
-            TypeMember.GetStaticPrivateField().Should().Be(11);
         }
 
         [Fact]
@@ -375,17 +348,6 @@ namespace Golden.Common.Tests
         }
 
         [Fact]
-        void GetValue_gets_static_member_value_when_object_type_passed()
-        {
-            TypeMember.PublicStaticField = 100;
-            var type = typeof(TypeMember);
-
-            var value = type.GetValue("PublicStaticField");
-
-            value.Should().Be(100);
-        }
-
-        [Fact]
         void GetValue_searches_members_with_no_case_sensitive()
         {
             var obj = new TypeMember { PublicProperty = 11 };
@@ -393,6 +355,16 @@ namespace Golden.Common.Tests
             var value = obj.GetValue("publicPROPERTY");
 
             value.Should().Be(11);
+        }
+
+        [Fact]
+        void With_invokes_action_on_passed_object()
+        {
+            var list = new List<int> { 1, 2, 3 };
+
+            list = list.With(items => items.Remove(2));
+
+            list.Should().BeEquivalentTo(new[] {1, 3});
         }
     }
 

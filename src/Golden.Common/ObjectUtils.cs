@@ -38,6 +38,7 @@ namespace Golden.Common
 
         public static bool NotIn<T>(this T value, params T[] items)
             => value.NotIn(items.AsEnumerable());
+
         public static bool NotIn<T>(this T value, IEnumerable<T> items)
         {
             return items.Contains(value) == false;
@@ -45,6 +46,7 @@ namespace Golden.Common
 
         public static bool IsIn<T>(this T value, params T[] items)
             => value.IsIn(items.AsEnumerable());
+
         public static bool IsIn<T>(this T value, IEnumerable<T> items)
         {
             return items.Contains(value);
@@ -52,6 +54,7 @@ namespace Golden.Common
 
         public static bool IsInRange<T>(this T value, T start, T end) where T : IComparable<T>
             => value.IsInRange(start, end, inclusive: true);
+
         public static bool IsInRange<T>(this T value, T start, T end, bool inclusive) where T : IComparable<T>
         {
             if (inclusive)
@@ -75,7 +78,7 @@ namespace Golden.Common
             return value.Equals(anotherValue) == false;
         }
 
-        public static void SetValue(this object objOrType, string name, object value)
+        public static void SetValue(this object obj, string name, object value)
         {
             var searchOptions = BindingFlags.Public |
                                 BindingFlags.NonPublic |
@@ -83,27 +86,20 @@ namespace Golden.Common
                                 BindingFlags.Static |
                                 BindingFlags.IgnoreCase;
 
-            if (objOrType is Type type)
-            {
-                var member = type.GetMember(name, searchOptions)[0];
-                member.SetMemberValue(value);
-            }
-            else
-            {
-                var member = objOrType.GetType().GetMember(name, searchOptions)[0];
-                member.SetMemberValue(value, objOrType);
-            }
+            var member = obj.GetType().GetMember(name, searchOptions)[0];
+            member.SetMemberValue(value, obj);
         }
 
-        public static void SetValue(this object objOrType, object memberValues)
+        public static void SetValue(this object obj, object memberValues)
         {
             var properties = memberValues.GetType().GetProperties();
-            properties.ForEach(property => objOrType.SetValue(property.Name, property.GetValue(memberValues)));
+            properties.ForEach(property => obj.SetValue(property.Name, property.GetValue(memberValues)));
         }
 
-        public static T GetValue<T>(this object objOrType, string name)
-            => (T)objOrType.GetValue(name);
-        public static object GetValue(this object objOrType, string name)
+        public static T GetValue<T>(this object obj, string name)
+            => (T)obj.GetValue(name);
+
+        public static object GetValue(this object obj, string name)
         {
             var searchOptions = BindingFlags.Public |
                                 BindingFlags.NonPublic |
@@ -111,16 +107,14 @@ namespace Golden.Common
                                 BindingFlags.Static |
                                 BindingFlags.IgnoreCase;
 
-            if (objOrType is Type type)
-            {
-                var member = type.GetMember(name, searchOptions)[0];
-                return member.GetMemberValue();
-            }
-            else
-            {
-                var member = objOrType.GetType().GetMember(name, searchOptions)[0];
-                return member.GetMemberValue(objOrType);
-            }
+            var member = obj.GetType().GetMember(name, searchOptions)[0];
+            return member.GetMemberValue(obj);
+        }
+
+        public static T With<T>(this T obj, Action<T> action)
+        {
+            action(obj);
+            return obj;
         }
     }
 }
