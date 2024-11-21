@@ -59,7 +59,7 @@ namespace Golden.Common
 
         public static object DefaultValue(this Type type)
         {
-            return _getDefaultValueMethod.MakeGenericMethod(type).Invoke(null, new object[0]);
+            return _getDefaultValueMethod.MakeGenericMethod(type).Invoke(null, Array.Empty<object>());
         }
 
         private static T GetDefaultValue<T>() => default(T);

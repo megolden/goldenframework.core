@@ -10,9 +10,9 @@ namespace Golden.DataAnnotations
         Inherited = false)]
     public class NoDefaultAttribute : ValidationAttribute
     {
-        public override bool IsValid(object value)
+        public override bool IsValid(object? value)
         {
-            if (value == null) return true;
+            if (value is null) return true;
 
             var type = value.GetType();
 

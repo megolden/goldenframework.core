@@ -13,20 +13,20 @@ namespace Golden.DataAnnotations
         public bool AllowEmptyStrings { get; set; } = false;
         public bool AllowDefaultValues { get; set; } = true;
 
-        public override bool IsValid(object value)
+        public override bool IsValid(object? value)
         {
-            if (value == null) return false;
+            if (value is null) return false;
 
             var type = value.GetType();
 
             if (type.IsEnum)
                 return Enum.IsDefined(type, value);
 
-            if (value is string str && AllowEmptyStrings == false)
-                return String.IsNullOrWhiteSpace(str) == false;
+            if (value is string str && !AllowEmptyStrings)
+                return !String.IsNullOrWhiteSpace(str);
 
-            if (AllowDefaultValues == false)
-                return value.Equals(type.DefaultValue()) == false;
+            if (!AllowDefaultValues)
+                return !value.Equals(type.DefaultValue());
 
             return true;
         }
